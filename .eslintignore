@@ -3,3 +3,5 @@
 /.eslintrc.js
 /stylelint.config.js
 /postcss.config.js
+/color.js
+/.babelrc

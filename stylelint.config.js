@@ -8,7 +8,9 @@ module.exports = {
 		'**/*.jpeg',
 		'**/*.gif',
 		'**/*.mp3',
-		'**/*.json'
+		'**/*.json',
+		'./src/styles/*.less',
+		'/node_modules'
 	],
 	rules: {
 		"max-nesting-depth":3,//限制嵌套的深度

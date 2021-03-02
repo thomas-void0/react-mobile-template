@@ -26,9 +26,8 @@
             "@assets/*": ["assets/*"],
             "@components/*": ["components/*"],
             "@pages/*": ["pages/*"],
-            "@utils/*": ["utils/*"],
-            "@types/*": ["types/*"],
-            "@hooks/*": ["hooks/*"]
+            "@typings/*": ["typings/*"],
+            "@common/*": ["common/*"]
         }
     },
     "include": ["./src/**/*"],

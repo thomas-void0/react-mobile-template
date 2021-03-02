@@ -23,13 +23,16 @@ module.exports = {
 		extensions: ['.ts', '.tsx', '.js', '.jsx', '.css', '.less', '.json'],
 		alias: {
 			'@src': path.resolve(__dirname, '../src/'),
-			'@utils': path.resolve(__dirname, '../src/utils/'),
-			'@hooks': path.resolve(__dirname, '../src/hooks/'),
+			'@common': path.resolve(__dirname, '../src/common/'),
 			'@pages': path.resolve(__dirname, '../src/pages/'),
 			'@components': path.resolve(__dirname, '../src/components/'),
 			'@assets': path.resolve(__dirname, '../src/assets/'),
-			'@types': path.resolve(__dirname, '../src/types/')
+			'@typings': path.resolve(__dirname, '../src/typings/')
 		}
+	},
+	output: {
+		path: path.resolve(__dirname, '../dist'),
+		filename: '[name]_[chunkhash:8].js'
 	},
 	module: {
 		rules: [
@@ -46,8 +49,9 @@ module.exports = {
 			},
 			// 解析ts.tsx
 			{
-				test: /\.(ts|tsx)?$/,
-				loader: 'awesome-typescript-loader',
+				test: /\.(ts|tsx|js|jsx)?$/,
+				// loader: 'awesome-typescript-loader',
+				loader: 'babel-loader',
 				exclude: /node_modules/
 			},
 			//解析css样式
@@ -61,9 +65,13 @@ module.exports = {
 								: MinCssExtractPlugin.loader
 					},
 					{ loader: 'css-loader' },
-					{ loader: 'less-loader' },
-					'postcss-loader'
-				]
+					{ loader: 'less-loader', options: { lessOptions: { javascriptEnabled: true } } },
+				],
+			},
+			{
+				test: /\.(css|less)$/,
+				loader: 'postcss-loader',
+				exclude: /node_modules/
 			},
 			// 解析图片
 			{
@@ -110,6 +118,6 @@ module.exports = {
 		new ESLintPlugin({ extensions: ['js', 'jsx', 'ts', 'tsx'] }), //eslint插件
 		new WebpackBar(), //显示打包的进度条
 		new MinCssExtractPlugin(),
-		new StylelintPlugin(stylesOptions)
+		new StylelintPlugin(stylesOptions),
 	]
 }
