@@ -1,0 +1,5 @@
+/script
+/node_modules
+/.eslintrc.js
+/stylelint.config.js
+/postcss.config.js
