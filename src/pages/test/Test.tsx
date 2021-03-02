@@ -6,10 +6,6 @@ export default function Test(): ReactElement {
 	const handleClick = (): void => {
 		console.log('runrun')
 	}
-<<<<<<< HEAD
-=======
-	const a = 1
->>>>>>> 638f743eebd6da71c420e8e529eb1f4d8c7855c3
 	return (
 		<div className="box">
 			啊啊啊啊啊啊
