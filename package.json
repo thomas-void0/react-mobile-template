@@ -12,11 +12,6 @@
   "pre-commit": [
     "lint"
   ],
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
       "eslint --fix",
@@ -65,7 +60,10 @@
     "eslint-webpack-plugin": "^2.5.2",
     "friendly-errors-webpack-plugin": "^1.7.0",
     "html-webpack-plugin": "^5.2.0",
+<<<<<<< HEAD
     "husky": "^5.1.3",
+=======
+>>>>>>> 638f743eebd6da71c420e8e529eb1f4d8c7855c3
     "less": "^4.1.1",
     "less-loader": "^8.0.0",
     "lint-staged": "^10.5.4",
