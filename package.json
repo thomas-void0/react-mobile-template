@@ -10,8 +10,7 @@
     "lint": "eslint --ext .jsx,js,ts,tsx src/ --fix ./src --cache"
   },
   "pre-commit": [
-    "precommit",
-    "precommit-msg"
+    "lint"
   ],
   "husky": {
     "hooks": {
@@ -19,8 +18,17 @@
     }
   },
   "lint-staged": {
-    "src/**/*.{jsx,txs,ts,js,vue}": ["eslint --fix", "git add"]
-   },
+    "*.{js,jsx,ts,tsx}": [
+      "eslint --fix",
+      "prettier --write",
+      "git add"
+    ],
+    "*.{css,less}": [
+      "stylelint --fix",
+      "prettier --write",
+      "git add"
+    ]
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
