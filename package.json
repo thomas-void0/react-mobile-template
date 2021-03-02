@@ -19,17 +19,8 @@
     }
   },
   "lint-staged": {
-    "*.{js,jsx,ts,tsx}": [
-      "eslint --fix",
-      "prettier --write",
-      "git add"
-    ],
-    "*.{css,less}": [
-      "stylelint --fix",
-      "prettier --write",
-      "git add"
-    ]
-  },
+    "src/**/*.{jsx,txs,ts,js,vue}": ["eslint --fix", "git add"]
+   },
   "keywords": [],
   "author": "",
   "license": "ISC",
