@@ -1,0 +1,35 @@
+{
+    "compilerOptions": {
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "target": "ES5",
+        "allowSyntheticDefaultImports": true,
+        "strict": true,
+        "forceConsistentCasingInFileNames": true,
+        "allowJs": true,
+        "outDir": "./dist/",
+        "esModuleInterop": true,
+        "noImplicitAny": false,
+        "sourceMap": true,
+        "module": "esnext",
+        "moduleResolution": "node",
+        "isolatedModules": true,
+        "importHelpers": true,
+        "lib": ["esnext", "dom", "dom.iterable"],
+        "skipLibCheck": true,
+        "jsx": "react",
+        "typeRoots": ["node", "node_modules/@types"],
+        "rootDirs": ["./src"],
+        "baseUrl": "./src",
+        "paths": {
+            "@src/*": ["*"],
+            "@assets/*": ["assets/*"],
+            "@components/*": ["components/*"],
+            "@pages/*": ["pages/*"],
+            "@typings/*": ["typings/*"],
+            "@common/*": ["common/*"]
+        }
+    },
+    "include": ["./src/**/*"],
+    "exclude": ["node_modules"]
+}
