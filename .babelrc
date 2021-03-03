@@ -4,9 +4,8 @@
         [
             "import",
             {
-                "libraryName": "antd",
-                "libraryDirectory": "es",
-                "style": true
+                "libraryName": "antd-mobile",
+                "style": "css"
             }
         ]
     ]

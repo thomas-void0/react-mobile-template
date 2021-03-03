@@ -1,13 +1,10 @@
-import React from 'react'
-import Test from '@pages/test/Test'
-import Test2 from '@pages/test2/Test2'
+import React, { ReactElement } from 'react'
+import ToPromote from '@pages/toPromote'
 
-const App = () => {
+const App = (): ReactElement => {
 	return (
 		<div>
-			22
-			<Test />
-			<Test2 />
+			<ToPromote />
 		</div>
 	)
 }

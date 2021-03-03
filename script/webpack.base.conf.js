@@ -66,12 +66,8 @@ module.exports = {
 					},
 					{ loader: 'css-loader' },
 					{ loader: 'less-loader', options: { lessOptions: { javascriptEnabled: true } } },
+					{ loader: 'postcss-loader' }
 				],
-			},
-			{
-				test: /\.(css|less)$/,
-				loader: 'postcss-loader',
-				exclude: /node_modules/
 			},
 			// 解析图片
 			{
@@ -119,5 +115,6 @@ module.exports = {
 		new WebpackBar(), //显示打包的进度条
 		new MinCssExtractPlugin(),
 		new StylelintPlugin(stylesOptions),
+
 	]
 }
