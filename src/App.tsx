@@ -1,5 +1,5 @@
 import React, { ReactElement } from 'react'
-import ToPromote from '@pages/toPromote'
+import ToPromote from '@src/pages/ToPromote'
 
 const App = (): ReactElement => {
 	return (

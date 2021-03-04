@@ -26,6 +26,7 @@ module.exports = {
 	rules: {
 		'prettier/prettier': 'error',
 		'no-unused-vars': 2, //定义了变量却没有在代码中使用
+		"@typescript-eslint/no-unused-vars": ["off"],
 		semi: 0, //缺少分号，行尾必须使用分号
 		curly: 2, //if 后必须包含 { ，单行 if 除外
 		'default-case': 2, //switch 语句必须包含 default
