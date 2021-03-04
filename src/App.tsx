@@ -1,11 +1,15 @@
 import React, { ReactElement } from 'react'
-import ToPromote from '@src/pages/ToPromote'
+import { BrowserRouter } from 'react-router-dom'
+import { renderRoutes } from 'react-router-config'
+import routes from './configRoute'
+import Test from './pages/Test'
 
 const App = (): ReactElement => {
 	return (
-		<div>
-			<ToPromote />
-		</div>
+		<BrowserRouter>
+			<Test />
+			{renderRoutes(routes)}
+		</BrowserRouter>
 	)
 }
 
