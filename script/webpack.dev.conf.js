@@ -12,6 +12,7 @@ module.exports = merge(base, {
 		contentBase: path.resolve(__dirname, '../dist'),
 		hot: true,
 		stats: 'errors-only',
-		open: true
+		open: true,
+		historyApiFallback: true
 	}
 })

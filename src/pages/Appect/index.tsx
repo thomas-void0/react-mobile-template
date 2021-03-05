@@ -12,7 +12,6 @@ const Appect = (props: IProps): ReactElement => {
 		history.push('/accept/husa')
 	}
 	const { route } = props
-	console.log(route)
 
 	return (
 		<div>

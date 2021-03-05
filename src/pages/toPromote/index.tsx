@@ -11,7 +11,6 @@ const ToPromote = (): ReactElement => {
 		})
 	}
 	const { data, error, loading } = useRequest(getUesrName)
-	console.log(loading)
 	return (
 		<div className={styles.box}>
 			<div>推广界面</div>
