@@ -1,17 +1,22 @@
 import md5 from 'blueimp-md5'
 import sampleSize from 'lodash/sampleSize'
-import { IXYZParam } from './utilsTypings'
 
 const arr = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f']
+
+interface IXYZParams {
+	nonce?: string
+	xyz?: string
+	[propName: string]: any
+}
 
 /**
  * 添加xyz参数
  * @param {string} url 请求地址
  * @param {object} data 请求数据
  */
-const setXYZ = (url: string, data = {}): IXYZParam => {
+const setXYZ = (url: string, data = {}): IXYZParams => {
 	let code = `${url}?AppKey=joker`
-	let param: IXYZParam = {}
+	let param: IXYZParams = {}
 	const keys = Object.keys(data).sort()
 
 	for (let key of keys) {
