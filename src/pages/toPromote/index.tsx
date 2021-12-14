@@ -1,5 +1,4 @@
 import React, { ReactElement } from 'react'
-import styles from './index.module.less'
 import { useRequest } from 'ahooks'
 
 const ToPromote = (): ReactElement => {
@@ -12,7 +11,7 @@ const ToPromote = (): ReactElement => {
 	}
 	const { data, error, loading } = useRequest(getUesrName)
 	return (
-		<div className={styles.box}>
+		<div>
 			<div>推广界面</div>
 			<div>{error}</div>
 			<div>{loading ? 'loading' : data}</div>

@@ -16,7 +16,7 @@ const Appect = (props: IProps): ReactElement => {
 	return (
 		<div>
 			<div>appect</div>
-			<button onClick={handleClick}>狗狗狗狗</button>
+			<button onClick={handleClick}>2222</button>
 			{renderRoutes(route.routes)}
 		</div>
 	)

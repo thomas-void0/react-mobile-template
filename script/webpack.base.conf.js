@@ -100,7 +100,7 @@ module.exports = {
 	},
 	plugins: [
 		new HtmlWebpackPlugin({
-			template: path.resolve(__dirname, '/public/index.html'), //需要被压缩的html文件路径
+			template: path.resolve(__dirname, '../public/index.html'), //需要被压缩的html文件路径
 			removeComments: true,
 			collapseWhitespace: true,
 			removeRedundantAttributes: true,
