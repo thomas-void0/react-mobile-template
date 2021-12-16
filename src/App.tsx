@@ -2,7 +2,8 @@ import React, { ReactElement, Suspense } from 'react'
 import { BrowserRouter } from 'react-router-dom'
 import { renderRoutes } from 'react-router-config'
 import routes from './configRoute'
-import Loading from '@src/components/loading'
+import Loading from '@src/components/Loading'
+import '@assets/styles/normalize.less'
 
 const App = (): ReactElement => {
 	return (

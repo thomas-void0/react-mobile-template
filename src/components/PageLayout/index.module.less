@@ -1,0 +1,57 @@
+@import '@assets/styles/base.less';
+
+.pageLayout {
+	background-repeat: no-repeat;
+	background-size: cover;
+	font-size: @nr-font-size-base;
+	/* stylelint-disable-next-line font-family-no-missing-generic-family-keyword */
+	font-family: @nr-font-family;
+	font-weight: normal;
+	color: #0d0d0d;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	padding: @nr-padding-base;
+	box-sizing: border-box;
+	height: 100%;
+	position: relative;
+
+	.musicIcon {
+		position: absolute;
+		left: @nr-padding-base;
+		top: @nr-padding-base;
+		width: 24px;
+		height: 24px;
+		background: #fff;
+		border: 1px solid @nr-primary-color;
+		border-radius: 50%;
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+	}
+
+	.footer {
+		font-size: 16px;
+	}
+}
+
+.container {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	height: 100%;
+	.content {
+		margin-top: 16px;
+	}
+	.up {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		align-items: center;
+		color: @nr-primary-color;
+		margin-bottom: 27px;
+	}
+}

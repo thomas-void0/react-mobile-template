@@ -17,9 +17,9 @@ const stylesOptions = {
 	fix: true //修复尽可能多的错误
 }
 
-
 module.exports = {
 	mode: 'none',
+	entry: path.resolve(__dirname, '../src/index.tsx'),
 	resolve: {
 		extensions: ['.ts', '.tsx', '.js', '.jsx', '.css', '.less', '.json'],
 		alias: {
@@ -33,7 +33,7 @@ module.exports = {
 	},
 	output: {
 		path: path.resolve(__dirname, '../dist'),
-		filename: '[name]_[chunkhash:8].js',
+		filename: '[name]_[chunkhash:8].js'
 		// publicPath:"../"
 	},
 	module: {
@@ -67,9 +67,12 @@ module.exports = {
 								: MinCssExtractPlugin.loader
 					},
 					{ loader: 'css-loader' },
-					{ loader: 'less-loader', options: { lessOptions: { javascriptEnabled: true } } },
+					{
+						loader: 'less-loader',
+						options: { lessOptions: { javascriptEnabled: true } }
+					},
 					{ loader: 'postcss-loader' }
-				],
+				]
 			},
 			// 解析图片
 			{
@@ -116,7 +119,6 @@ module.exports = {
 		new ESLintPlugin({ extensions: ['js', 'jsx', 'ts', 'tsx'] }), //eslint插件
 		new WebpackBar(), //显示打包的进度条
 		new MinCssExtractPlugin(),
-		new StylelintPlugin(stylesOptions),
-
+		new StylelintPlugin(stylesOptions)
 	]
 }

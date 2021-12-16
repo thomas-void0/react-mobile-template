@@ -1,8 +1,8 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Users\newrank\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js run lint-staged
+  C:\Program Files\nodejs\node.exe C:\Users\newrank\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add antd-mobile@next
 
 PATH: 
-  C:\Program Files\Git\mingw64\libexec\git-core;C:\Users\newrank\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\local\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\newrank\bin;C:\Program Files\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\WINDOWS\System32\OpenSSH;C:\Program Files\nodejs;C:\ProgramData\chocolatey\bin;C:\Program Files\Java\jdk-17;C:\Program Files\Git\cmd;C:\Program Files (x86)\Tencent\微信web开发者工具\dll;C:\Users\newrank\AppData\Local\Microsoft\WindowsApps;C:\Users\newrank\AppData\Roaming\npm;C:\Users\newrank\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\newrank\AppData\Local\GitHubDesktop\bin;C:\Program Files\Git\usr\bin\vendor_perl;C:\Program Files\Git\usr\bin\core_perl
+  C:\Users\newrank\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\local\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\newrank\bin;C:\Program Files\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\WINDOWS\System32\OpenSSH;C:\Program Files\nodejs;C:\ProgramData\chocolatey\bin;C:\Program Files\Java\jdk-17;C:\Program Files\Git\cmd;C:\Program Files (x86)\Tencent\微信web开发者工具\dll;C:\Users\newrank\AppData\Local\Microsoft\WindowsApps;C:\Users\newrank\AppData\Roaming\npm;C:\Users\newrank\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\newrank\AppData\Local\GitHubDesktop\bin;C:\Program Files\Git\usr\bin\vendor_perl;C:\Program Files\Git\usr\bin\core_perl
 
 Yarn version: 
   1.22.17
@@ -14,12 +14,7 @@ Platform:
   win32 x64
 
 Trace: 
-  SyntaxError: C:\work\ideaworkspace_cloud_html\base-react\package.json: Unexpected token } in JSON at position 561
-      at JSON.parse (<anonymous>)
-      at C:\Users\newrank\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:1625:59
-      at Generator.next (<anonymous>)
-      at step (C:\Users\newrank\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:310:30)
-      at C:\Users\newrank\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:321:13
+  Error: EPERM: operation not permitted, copyfile 'C:\Users\newrank\AppData\Local\Yarn\Cache\v6\npm-scheduler-0.20.2-4baee39436e34aa93b4874bddcbf0fe8b8b50e91-integrity\node_modules\scheduler\cjs\scheduler-tracing.development.js' -> 'C:\work\ideaworkspace_cloud_html\nr-trade-year-review-h5\node_modules\scheduler\cjs\scheduler-tracing.development.js'
 
 npm manifest: 
   {
@@ -34,7 +29,7 @@ npm manifest:
   		"lint": "eslint --ext .jsx,js,ts,tsx src/ --fix ./src --cache",
   		"prepare": "husky install",
   		"lint-staged": "lint-staged",
-  		"lint-staged:js": "eslint --ext .js,.jsx,.ts,.tsx ",
+  		"lint-staged:js": "eslint --ext .js,.jsx,.ts,.tsx "
   	},
   	"keywords": [],
   	"author": "",
@@ -47,6 +42,7 @@ npm manifest:
   		"@babel/preset-typescript": "^7.13.0",
   		"@commitlint/cli": "^15.0.0",
   		"@commitlint/config-conventional": "^15.0.0",
+  		"@react-spring/web": "^9.3.1",
   		"@types/react": "^17.0.2",
   		"@types/react-dom": "^17.0.1",
   		"@types/react-redux": "^7.1.16",
@@ -98,6 +94,7 @@ npm manifest:
   		"stylelint-config-prettier": "^8.0.2",
   		"stylelint-config-standard": "^20.0.0",
   		"stylelint-webpack-plugin": "^2.1.1",
+  		"swiper": "^7.0.0",
   		"typescript": "^4.4.4",
   		"url-loader": "^4.1.1",
   		"webpack": "^5.24.2",
