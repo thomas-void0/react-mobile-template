@@ -62,16 +62,14 @@ module.exports = {
 				use: [
 					{
 						loader:
-							process.env.ENV_LWD === 'development'
-								? 'style-loader'
-								: MinCssExtractPlugin.loader
+							process.env.ENV_LWD === 'development' ? 'style-loader' : MinCssExtractPlugin.loader
 					},
 					{ loader: 'css-loader' },
+					{ loader: 'postcss-loader' },
 					{
 						loader: 'less-loader',
 						options: { lessOptions: { javascriptEnabled: true } }
-					},
-					{ loader: 'postcss-loader' }
+					}
 				]
 			},
 			// 解析图片
