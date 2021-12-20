@@ -30,7 +30,7 @@ module.exports = {
 		'no-unused-vars': 1, //定义了变量却没有在代码中使用
 		'@typescript-eslint/no-unused-vars': ['off'],
 		semi: 0, //缺少分号，行尾必须使用分号
-		curly: 2, //if 后必须包含 { ，单行 if 除外
+		curly: 0, //if 后必须包含 { ，单行 if 除外
 		'default-case': 2, //switch 语句必须包含 default
 		'max-depth': [2, 5], //最大块嵌套不能超过5层
 		'max-params': [2, 8], //函数的形参不能多于8个

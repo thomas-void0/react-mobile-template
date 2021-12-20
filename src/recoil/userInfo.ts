@@ -8,15 +8,13 @@ export const USER_INFO = atom({
 	default: selector({
 		key: 'USER_INFO_SELECTOR',
 		get: async () => {
-			let res: any = null
-			console.log(res)
+			const initValue: Record<string, any> = {}
 			try {
-				res = await getUser()
+				const res = await getUser()
+				const { data, success } = res
+				if (success && data) return data
 			} catch (error) {
-				console.log('error')
-			} finally {
-				// eslint-disable-next-line no-unsafe-finally
-				return res
+				return initValue
 			}
 		}
 	})
