@@ -11,15 +11,11 @@ const CarouselContainer: FC<IProps> = props => {
 	const { content } = props
 
 	return (
-		<Carousel
-			className={styles.carouselContainer}
-			vertical
-			autoplay={false}
-			dots={false}
-			infinite
-		>
+		<Carousel className={styles.carouselContainer} vertical autoplay={false} dots={false}>
 			{content.map((item, index) => (
-				<div key={index}>{item}</div>
+				<div style={{ height: '100vh' }} key={index}>
+					{item}
+				</div>
 			))}
 		</Carousel>
 	)

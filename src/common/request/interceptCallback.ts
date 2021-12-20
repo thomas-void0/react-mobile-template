@@ -54,12 +54,7 @@ const responseCallBack = (response: AxiosResponse<any>) => {
 		}
 	} else if (
 		(response.status === 200 || success) &&
-		(isAccountGet ||
-			code === '000000' ||
-			code === '1' ||
-			code === 1 ||
-			code === 0 ||
-			code === 200)
+		(isAccountGet || code === '000000' || code === '1' || code === 1 || code === 0 || code === 200)
 	) {
 		result = {
 			success: true,

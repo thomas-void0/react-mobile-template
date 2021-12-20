@@ -1,0 +1,68 @@
+@import '@assets/styles/base.less';
+
+.wrap {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	height: 100%;
+
+	.flexCenter {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	.head {
+		width: 100%;
+		img {
+			width: 100%;
+			height: 226px;
+		}
+	}
+	.main {
+		width: 100%;
+		.title {
+			width: 173px;
+			height: 21px;
+		}
+		.advTitle {
+			width: 281px;
+			height: 32px;
+			margin: 24px 0;
+		}
+		.title,
+		.advTitle {
+			img {
+				width: 100%;
+			}
+		}
+
+		.desc {
+			text-align: center;
+			color: #282828;
+			font-family: @nr-font-family;
+			letter-spacing: 4px;
+		}
+
+		.btn {
+			width: 212px;
+			height: 40px;
+			border-radius: 20px;
+			background: linear-gradient(180deg, #f90, #ff7800);
+			margin-top: 24px;
+			font-size: @nr-font-size-base;
+			img {
+				width: 72px;
+				height: 17px;
+			}
+		}
+	}
+
+	.footer {
+		width: 100%;
+		margin-top: 112px;
+		img {
+			width: 110px;
+			height: 24px;
+		}
+	}
+}

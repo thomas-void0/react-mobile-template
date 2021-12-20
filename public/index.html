@@ -7,43 +7,56 @@
 			content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"
 		/>
 		<meta name="baidu-site-verification" content="ptk9VJudKz" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no"
+		/>
 		<script src="https://as.alipayobjects.com/g/component/fastclick/1.0.6/fastclick.js"></script>
 		<script>
 			if ('addEventListener' in document) {
-				document.addEventListener('DOMContentLoaded', function() {
-					FastClick.attach(document.body);
-				}, false);
+				document.addEventListener(
+					'DOMContentLoaded',
+					function () {
+						FastClick.attach(document.body)
+					},
+					false
+				)
 			}
-			if(!window.Promise) {
-				document.writeln('<script src="https://as.alipayobjects.com/g/component/es6-promise/3.2.2/es6-promise.min.js"'+'>'+'<'+'/'+'script>');
+			if (!window.Promise) {
+				document.writeln(
+					'<script src="https://as.alipayobjects.com/g/component/es6-promise/3.2.2/es6-promise.min.js"' +
+						'>' +
+						'<' +
+						'/' +
+						'script>'
+				)
 			}
 		</script>
-		    <script>
-					(function(window, document) {
-						function resize() {
-							var ww = window.innerWidth
-							if (ww > window.screen.width) {
-								window.requestAnimationFrame(resize)
-							} else {
-								if (ww > 375) {
-									ww = 375
-								}
-								document.documentElement.style.fontSize = ww * 100 / 375 + 'px'
-							}
+		<script>
+			;(function (window, document) {
+				function resize() {
+					var ww = window.innerWidth
+					if (ww > window.screen.width) {
+						window.requestAnimationFrame(resize)
+					} else {
+						if (ww > 375) {
+							ww = 375
 						}
-	
-						resize();
-	
-						window.addEventListener('resize', resize);
-						window.addEventListener('pageshow', function (e) {
-							if (e.persisted) {
-								resize();
-							}
-						});
-					})(window, document);
-			</script>
-		<title>移动端测试项目</title>
+						document.documentElement.style.fontSize = (ww * 100) / 375 + 'px'
+					}
+				}
+
+				resize()
+
+				window.addEventListener('resize', resize)
+				window.addEventListener('pageshow', function (e) {
+					if (e.persisted) {
+						resize()
+					}
+				})
+			})(window, document)
+		</script>
+		<title>年度回顾</title>
 	</head>
 
 	<body>

@@ -25,8 +25,9 @@ module.exports = {
 	plugins: ['react', '@typescript-eslint'],
 	rules: {
 		'react/prop-types': ['off'],
+		'react/jsx-key': ['off'],
 		'prettier/prettier': 'error',
-		'no-unused-vars': 2, //定义了变量却没有在代码中使用
+		'no-unused-vars': 1, //定义了变量却没有在代码中使用
 		'@typescript-eslint/no-unused-vars': ['off'],
 		semi: 0, //缺少分号，行尾必须使用分号
 		curly: 2, //if 后必须包含 { ，单行 if 除外

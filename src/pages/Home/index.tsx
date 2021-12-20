@@ -2,7 +2,7 @@
 import React, { FC } from 'react'
 
 const Home: FC<any> = () => {
-	return <div>Home</div>
+	return <div>home</div>
 }
 
 export default Home
