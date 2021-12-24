@@ -5,6 +5,9 @@ const MinCssExtractPlugin = require('mini-css-extract-plugin') //将CSS解压到
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const WebpackBar = require('webpackbar')
 const StylelintPlugin = require('stylelint-webpack-plugin') //规范less的书写规则
+const webpack = require('webpack')
+
+// const CopyWebpackPlugin = require("copy-webpack-plugin")
 
 //stylelint的匹配项
 const stylesOptions = {
@@ -21,7 +24,6 @@ module.exports = {
 	mode: 'none',
 	entry: path.resolve(__dirname, '../src/index.tsx'),
 	resolve: {
-		extensions: ['.ts', '.tsx', '.js', '.jsx', '.css', '.less', '.json'],
 		alias: {
 			'@src': path.resolve(__dirname, '../src/'),
 			'@common': path.resolve(__dirname, '../src/common/'),
@@ -29,12 +31,13 @@ module.exports = {
 			'@components': path.resolve(__dirname, '../src/components/'),
 			'@assets': path.resolve(__dirname, '../src/assets/'),
 			'@typings': path.resolve(__dirname, '../src/typings/')
-		}
+		},
+		extensions: ['.ts', '.tsx', '.js', '.jsx', '.css', '.less', '.json']
 	},
 	output: {
 		path: path.resolve(__dirname, '../dist'),
-		filename: '[name]_[chunkhash:8].js'
-		// publicPath:"../"
+		filename: '[name]_[chunkhash:8].js',
+		publicPath: process.env.ENV_LWD === 'development' ? '/' : './'
 	},
 	module: {
 		rules: [
@@ -85,6 +88,15 @@ module.exports = {
 					}
 				]
 			},
+			// 解析MP3
+			{
+				test: /\.(mp3)(\?.*)?$/,
+				loader: 'url-loader',
+				options: {
+					name: 'audios/[name].[ext]',
+					limit: 10
+				}
+			},
 			//解析字体文件
 			{
 				test: /\.(woff|woff2|eot|ttf|otf)$/,
@@ -117,6 +129,9 @@ module.exports = {
 		new ESLintPlugin({ extensions: ['js', 'jsx', 'ts', 'tsx'] }), //eslint插件
 		new WebpackBar(), //显示打包的进度条
 		new MinCssExtractPlugin(),
-		new StylelintPlugin(stylesOptions)
+		new StylelintPlugin(stylesOptions),
+		new webpack.DefinePlugin({
+			'process.env.NODE_ENV': JSON.stringify('development')
+		})
 	]
 }

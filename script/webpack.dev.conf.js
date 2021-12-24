@@ -8,6 +8,16 @@ const proxyObj = {
 		target: 'http://test.main.newrank.cn/xdnphb/common',
 		changeOrigin: true,
 		pathRewrite: { '^/xdnphb/common': '' }
+	},
+	'/xdnphb/login': {
+		target: 'http://test.main.newrank.cn/xdnphb/login',
+		changeOrigin: true,
+		pathRewrite: { '^/xdnphb/login': '' }
+	},
+	'/xdnphb/': {
+		target: 'http://test.a.newrank.cn',
+		changeOrigin: true,
+		pathRewrite: { '^': '' }
 	}
 }
 
