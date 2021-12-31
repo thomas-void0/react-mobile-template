@@ -37,7 +37,7 @@ module.exports = {
 	output: {
 		path: path.resolve(__dirname, '../dist'),
 		filename: '[name]_[chunkhash:8].js',
-		publicPath: process.env.ENV_LWD === 'development' ? '/' : './'
+		publicPath: process.env.NODE_ENV === 'development' ? '/' : './'
 	},
 	module: {
 		rules: [
@@ -65,7 +65,7 @@ module.exports = {
 				use: [
 					{
 						loader:
-							process.env.ENV_LWD === 'development' ? 'style-loader' : MinCssExtractPlugin.loader
+							process.env.NODE_ENV === 'development' ? 'style-loader' : MinCssExtractPlugin.loader
 					},
 					{ loader: 'css-loader' },
 					{ loader: 'postcss-loader' },
@@ -131,7 +131,7 @@ module.exports = {
 		new MinCssExtractPlugin(),
 		new StylelintPlugin(stylesOptions),
 		new webpack.DefinePlugin({
-			'process.env.NODE_ENV': JSON.stringify('development')
+			'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
 		})
 	]
 }
