@@ -1,13 +1,10 @@
 const path = require('path')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
-const ESLintPlugin = require('eslint-webpack-plugin')
 const MinCssExtractPlugin = require('mini-css-extract-plugin') //将CSS解压到单独的文件中
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const WebpackBar = require('webpackbar')
 const StylelintPlugin = require('stylelint-webpack-plugin') //规范less的书写规则
 const webpack = require('webpack')
-
-// const CopyWebpackPlugin = require("copy-webpack-plugin")
 
 //stylelint的匹配项
 const stylesOptions = {
@@ -41,20 +38,10 @@ module.exports = {
 	},
 	module: {
 		rules: [
-			//进行eslint检查
-			{
-				test: /\.(js|ts|tsx)$/,
-				loader: 'eslint-loader',
-				enforce: 'pre',
-				include: [path.join(__dirname, 'src')],
-				options: {
-					fix: true
-				},
-				exclude: /node_modules/
-			},
 			// 解析ts.tsx
 			{
 				test: /\.(ts|tsx|js|jsx)?$/,
+				// use: ["thread-loader", 'babel-loader'],
 				// loader: 'awesome-typescript-loader',
 				loader: 'babel-loader',
 				exclude: /node_modules/
@@ -126,7 +113,6 @@ module.exports = {
 			minifyURLs: true
 		}),
 		new CleanWebpackPlugin(),
-		new ESLintPlugin({ extensions: ['js', 'jsx', 'ts', 'tsx'] }), //eslint插件
 		new WebpackBar(), //显示打包的进度条
 		new MinCssExtractPlugin(),
 		new StylelintPlugin(stylesOptions),
