@@ -4,7 +4,8 @@ const routes = [
 	{
 		path: '/',
 		exact: true,
-		component: lazy(() => import('@pages/Home'))
+		component: lazy(() => import('@pages/Home')),
+		routes: [{ path: '/husa', component: lazy(() => import('@pages/Husa')) }]
 	},
 	{
 		path: '/adv',

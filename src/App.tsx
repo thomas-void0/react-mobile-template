@@ -12,6 +12,7 @@ import { RecoilRoot } from 'recoil'
 // 在非微信环境不能打开
 const App = (): ReactElement => {
 	let flat = true
+	console.log('routes', routes)
 	return (
 		<RecoilRoot>
 			{flat ? (
