@@ -1,7 +1,6 @@
 //公用的请求拦截回调参数
 import { AxiosResponse } from 'axios'
 // import { loginUrl } from '@/common/config'
-import { Toast } from 'antd-mobile'
 
 interface IResult {
 	success: boolean
@@ -70,7 +69,7 @@ const responseCallBack = (response: AxiosResponse<any>) => {
 	}
 
 	if (!result.success) {
-		Toast.fail(result.message)
+		console.log(result.message)
 	}
 
 	response.data = result
@@ -80,8 +79,6 @@ const responseCallBack = (response: AxiosResponse<any>) => {
 //错误回调
 const errorCallback = (error: Error) => {
 	console.log(error)
-
-	Toast.fail(error.message)
 	return Promise.reject(error)
 }
 

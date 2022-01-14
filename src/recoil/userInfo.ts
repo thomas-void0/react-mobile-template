@@ -1,5 +1,5 @@
 import { atom, selector } from 'recoil'
-import { getUser } from '@common/api'
+import { getUser } from '@/common/api'
 
 export * as recoil from 'recoil'
 

@@ -1,5 +1,5 @@
 import ordinaryRequest from '../request/ordinaryRequest'
-import { IResData } from '@typings/api'
+import { IResData } from '@/typings/api'
 
 // 获取用户信息
 export const getUser = () => {

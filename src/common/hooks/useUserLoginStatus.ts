@@ -1,4 +1,4 @@
-import { recoil, USER_INFO } from '@src/recoil/userInfo'
+import { recoil, USER_INFO } from '@/recoil/userInfo'
 
 // 获取用户登录状态
 const useUserLoginStatus = () => {
