@@ -1,29 +1,13 @@
 /* eslint-disable no-undef */
-import React, { ReactElement, Suspense } from 'react'
-import { BrowserRouter } from 'react-router-dom'
-import { renderRoutes } from 'react-router-config'
+import React, { ReactElement } from 'react'
+import { useRoutes } from 'react-router-dom'
 import routes from './configRoute'
-import Loading from '@src/components/Loading'
 import '@assets/styles/normalize.less'
-// import isWeChat from '@common/utils/isWechat'
-import NotWechat from '@components/NotWechat'
-import { RecoilRoot } from 'recoil'
 
 // 在非微信环境不能打开
 const App = (): ReactElement => {
-	let flat = true
-	console.log('routes', routes)
-	return (
-		<RecoilRoot>
-			{flat ? (
-				<BrowserRouter>
-					<Suspense fallback={<Loading />}>{renderRoutes(routes)}</Suspense>
-				</BrowserRouter>
-			) : (
-				<NotWechat />
-			)}
-		</RecoilRoot>
-	)
+	const el = useRoutes(routes)
+	return <div>{el}</div>
 }
 
 export default App

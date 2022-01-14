@@ -1,5 +1,16 @@
 import * as ReactDOM from 'react-dom'
-import * as React from 'react'
+import React, { Suspense } from 'react'
 import App from './App'
+import { RecoilRoot } from 'recoil'
+import { BrowserRouter } from 'react-router-dom'
 
-ReactDOM.render(<App />, document.getElementById('root'))
+ReactDOM.render(
+	<RecoilRoot>
+		<BrowserRouter>
+			<Suspense fallback={<div>loading</div>}>
+				<App />
+			</Suspense>
+		</BrowserRouter>
+	</RecoilRoot>,
+	document.getElementById('root')
+)
