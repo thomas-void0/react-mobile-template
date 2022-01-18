@@ -1,20 +1,28 @@
-import React from 'react'
+import React, { lazy } from 'react'
 import type { RouteObject } from 'react-router-dom'
-import Home from '@/pages/Home'
-import Page1 from '@/pages/Page1'
-import Page2 from '@/pages/Page2'
+const Home = lazy(() => import('@/pages/Home'))
+const Page1 = lazy(() => import('@/pages/Page1'))
+const Page2 = lazy(() => import('@/pages/Page2'))
+const NoMatch = lazy(() => import('@/components/NoMatch'))
 
 const routes: RouteObject[] = [
 	{
 		path: '/',
 		element: <Home />,
 		children: [
-			{ path: '/husa', element: <Page1 /> },
 			{
-				path: '/adv',
+				path: '/page1',
+				element: <Page1 />
+			},
+			{
+				path: '/page2',
 				element: <Page2 />
 			}
 		]
+	},
+	{
+		path: '*',
+		element: <NoMatch />
 	}
 ]
 
