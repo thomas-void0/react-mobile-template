@@ -3,19 +3,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const MinCssExtractPlugin = require('mini-css-extract-plugin') //将CSS解压到单独的文件中
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const WebpackBar = require('webpackbar')
-const StylelintPlugin = require('stylelint-webpack-plugin') //规范less的书写规则
 const webpack = require('webpack')
-
-//stylelint的匹配项
-const stylesOptions = {
-	context: './src', //指示文件根的字符串
-	configFile: path.resolve(__dirname, '../stylelint.config.js'), //指定styelint要使用的配置文件位置
-	files: '**/**/*.less', //指定查找文件的glob模式。必须相对于options.context
-	quiet: true, // 如果设置为true，将只处理和报告错误，并忽略警告。
-	failOnError: false, //如果有任何错误，都会导致模块构建失败
-	syntax: 'less',
-	fix: true //修复尽可能多的错误
-}
 
 module.exports = {
 	mode: 'none',
@@ -36,10 +24,8 @@ module.exports = {
 			// 解析ts.tsx
 			{
 				test: /\.(ts|tsx|js|jsx)?$/,
-				// use: ["thread-loader", 'babel-loader'],
-				// loader: 'awesome-typescript-loader',
-				loader: 'babel-loader',
-				exclude: /node_modules/
+				exclude: /node_modules/,
+				loader: 'babel-loader'
 			},
 			//解析css样式
 			{
@@ -110,7 +96,6 @@ module.exports = {
 		new CleanWebpackPlugin(),
 		new WebpackBar(), //显示打包的进度条
 		new MinCssExtractPlugin(),
-		new StylelintPlugin(stylesOptions),
 		new webpack.DefinePlugin({
 			'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
 		})

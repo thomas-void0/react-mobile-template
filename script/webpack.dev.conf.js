@@ -1,7 +1,6 @@
 const base = require('./webpack.base.conf')
 const path = require('path')
 const { merge } = require('webpack-merge')
-const ESLintPlugin = require('eslint-webpack-plugin')
 const webpack = require('webpack')
 const ReactRefreshPlugin = require('@pmmmwh/react-refresh-webpack-plugin')
 
@@ -31,9 +30,8 @@ module.exports = merge(base, {
 	},
 	module: {
 		rules: [
-			//进行eslint检查
 			{
-				test: /\.(js|ts|tsx)$/,
+				test: /\.(ts|tsx|js|jsx)?$/,
 				enforce: 'pre',
 				include: [path.join(__dirname, 'src')],
 				exclude: /node_modules/,
@@ -43,22 +41,12 @@ module.exports = merge(base, {
 						options: {
 							plugins: [require.resolve('react-refresh/babel')]
 						}
-					},
-					{
-						loader: 'eslint-loader',
-						options: {
-							fix: true
-						}
 					}
 				]
 			}
 		]
 	},
-	plugins: [
-		new webpack.HotModuleReplacementPlugin(),
-		new ESLintPlugin({ extensions: ['js', 'jsx', 'ts', 'tsx'] }),
-		new ReactRefreshPlugin() // 为 react-refresh 添加
-	],
+	plugins: [new webpack.HotModuleReplacementPlugin(), new ReactRefreshPlugin()],
 	devtool: 'source-map',
 	devServer: {
 		host: 'dev.a.newrank.cn',
