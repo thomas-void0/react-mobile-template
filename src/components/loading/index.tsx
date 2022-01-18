@@ -1,8 +1,9 @@
 import React, { ReactElement } from 'react'
+import styles from './index.module.less'
 
-//路由懒加载占位符组件
+// loading
 const Loading = (): ReactElement => {
-	return <div>loading...</div>
+	return <div className={styles['loading-container']}>loading...</div>
 }
 
 export default Loading
